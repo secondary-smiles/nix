@@ -13,6 +13,7 @@
     onActivation.upgrade = true;
     casks = [
       "arc"
+      "tailscale"
     ];
   };
   
@@ -26,6 +27,8 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
   };
 
@@ -41,6 +44,7 @@
       skhd
       coreutils
       aerc
+      jq
     ];
 
     programs.neovim = {
