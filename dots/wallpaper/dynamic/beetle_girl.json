@@ -1,0 +1,13 @@
+[
+    {
+        "fileName": "somefield-sketch-298-1920-1200.png",
+        "isPrimary": true,
+        "isForLight": true,
+        "isForDark": false
+    },
+    {
+        "fileName": "somefield-sketch-298-1-1920-1200.png",
+        "isForDark": true,
+        "isForLight": false
+    }
+]

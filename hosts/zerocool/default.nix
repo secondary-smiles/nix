@@ -23,6 +23,7 @@
   };
   environment.extraInit = ''
     touch ~/.hushlogin
+    ln -sf ~/nix/dots/nvim ~/.config/nvim
   '';
 
   fonts.fonts = with pkgs; [
@@ -54,6 +55,7 @@
       enable = true;
       defaultEditor = true;
       vimdiffAlias = true;
+      extraPackages = [ pkgs.vimPlugins.packer-nvim ];
     };
 
     programs.git = {
