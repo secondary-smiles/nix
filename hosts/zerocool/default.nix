@@ -62,8 +62,10 @@
         env.TERM = "xterm-256color";
         font = {
           size = 12;
-          draw_bold_text_with_bright_colors = true;
         };
+
+	window.decorations = "none";
+	window.padding = { x = 5; y = 5; };
       };
     };
   };
