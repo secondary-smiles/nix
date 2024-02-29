@@ -15,14 +15,14 @@
 
     dock = {
       autohide = true;
-      autohide-delay = 0.0;
-      autohide-time-modifier = 0.0;
-      expose-animation-duration = 0.0;
+      autohide-delay = 0.01;
+      autohide-time-modifier = 0.01;
+      expose-animation-duration = 0.01;
       mru-spaces = false;
       orientation = "right";
       show-recents = false;
       static-only = true;
-      tilesize = 0; # 64 is default
+      tilesize = 1; # 64 is default
     };
 
     finder = {

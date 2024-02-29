@@ -15,6 +15,7 @@
       "arc"
       "tailscale"
       "alacritty"
+      "swift-quit"
     ];
   };
   
@@ -25,10 +26,6 @@
     touch ~/.hushlogin
     ln -sf ~/nix/dots/nvim ~/.config/nvim
   '';
-
-  fonts.fonts = with pkgs; [
-    jetbrains-mono
-  ];
 
   programs.zsh = {
     enable = true;
@@ -49,13 +46,13 @@
       coreutils
       aerc
       jq
+      nixd
     ];
 
     programs.neovim = {
       enable = true;
       defaultEditor = true;
       vimdiffAlias = true;
-      extraPackages = [ pkgs.vimPlugins.packer-nvim ];
     };
 
     programs.git = {
@@ -74,6 +71,7 @@
       settings = {
         env.TERM = "xterm-256color";
         font = {
+          normal.family = "JetbrainsMono Nerd Font Mono";
           size = 12;
         };
 
