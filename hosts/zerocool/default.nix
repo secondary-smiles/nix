@@ -47,6 +47,7 @@
       aerc
       jq
       nixd
+      typst
     ];
 
     programs.neovim = {
