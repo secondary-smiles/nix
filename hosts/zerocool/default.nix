@@ -14,12 +14,16 @@
     casks = [
       "arc"
       "tailscale"
+      "alacritty"
     ];
   };
   
   environment.variables = {
     EDITOR = "nvim";
   };
+  environment.extraInit = ''
+    touch ~/.hushlogin
+  '';
 
   fonts.fonts = with pkgs; [
     jetbrains-mono
@@ -28,7 +32,6 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
   };
 
@@ -57,6 +60,10 @@
       enable = true;
       userName = "Shav Kinderlehrer";
       userEmail = "shav@trinket.icu";
+
+      extraConfig = {
+        commit.verbose = true;
+      };
     }; 
 
     programs.alacritty = {
