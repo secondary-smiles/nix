@@ -26,6 +26,8 @@
     ls = "ls --color=auto";
   };
 
+  programs.zsh.enable = true;
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.z6l = { pkgs, ... }: {
@@ -51,8 +53,12 @@
       syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
       initExtra = ''
-        "GPG_TTY = $(tty)"
+        GPG_TTY="$(tty)"
       '';
+      localVariables = {
+        PS1 = "%F{red}%B%(?..[%?] )%f%F{cyan}%b%n@%m%f * ";
+        RPS1 = "%F{magenta}%~%f";
+      };
     };
 
     programs.neovim = {
