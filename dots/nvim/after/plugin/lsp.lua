@@ -131,3 +131,4 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 lspconfig.nixd.setup{}
+lspconfig.typst_lsp.setup{}

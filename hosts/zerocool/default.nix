@@ -22,10 +22,9 @@
   environment.variables = {
     EDITOR = "nvim";
   };
-  environment.extraInit = ''
-    touch ~/.hushlogin
-    ln -sf ~/nix/dots/nvim ~/.config/nvim
-  '';
+  environment.shellAliases = {
+    ls = "ls --color=auto";
+  };
 
   programs.zsh = {
     enable = true;
@@ -48,6 +47,8 @@
       jq
       nixd
       typst
+      gnupg
+      pandoc
     ];
 
     programs.neovim = {
