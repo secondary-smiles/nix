@@ -26,18 +26,12 @@
     ls = "ls --color=auto";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableSyntaxHighlighting = true;
-  };
-
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.z6l = { pkgs, ... }: {
     home.username = lib.mkForce "z6l";
     home.homeDirectory = lib.mkForce "/Users/z6l";
-    home.stateVersion = "23.05";
+    home.stateVersion = "24.05";
 
     home.packages = with pkgs; [
       yabai
@@ -50,6 +44,16 @@
       gnupg
       pandoc
     ];
+
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      enableAutosuggestions = true;
+      initExtra = ''
+        "GPG_TTY = $(tty)"
+      '';
+    };
 
     programs.neovim = {
       enable = true;
@@ -77,8 +81,10 @@
           size = 12;
         };
 
-	window.decorations = "none";
-	window.padding = { x = 5; y = 5; };
+	      window.decorations = "none";
+	      window.padding = { x = 5; y = 5; };
+
+        mouse.hide_when_typing = true;
       };
     };
   };
