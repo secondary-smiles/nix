@@ -16,6 +16,7 @@
       "tailscale"
       "alacritty"
       "swift-quit"
+      "httpie"
     ];
   };
   
