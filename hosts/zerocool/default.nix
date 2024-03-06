@@ -91,6 +91,7 @@
 
 	      window.decorations = "none";
 	      window.padding = { x = 5; y = 5; };
+        window.option_as_alt = "Both";
 
         mouse.hide_when_typing = true;
       };
