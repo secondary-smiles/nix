@@ -11,6 +11,8 @@
     enable = true;
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
+    brews = [
+    ];
     casks = [
       "arc"
       "tailscale"
