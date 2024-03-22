@@ -57,6 +57,7 @@
       enableAutosuggestions = true;
       initExtra = ''
         GPG_TTY="$(tty)"
+        if [ -z $TMUX ]; then tmux a || tmux; fi
       '';
       localVariables = {
         PS1 = "%F{red}%B%(?..[%?] )%f%F{cyan}%b%n@%m%f * ";
@@ -97,6 +98,34 @@
 
         mouse.hide_when_typing = true;
       };
+    };
+
+    programs.tmux = {
+      enable = true;
+      escapeTime = 0;
+      mouse = true;
+      terminal = "screen-256color";
+      extraConfig = ''
+        unbind C-b
+        set -g prefix C-s
+
+        bind h select-pane -L
+        bind j select-pane -D
+        bind k select-pane -U
+        bind l select-pane -R
+
+        unbind "'"
+        bind "'" split-window -h
+        unbind %
+      '';
+      plugins = with pkgs; [
+        {
+          plugin = tmuxPlugins.catppuccin;
+          extraConfig = ''
+            set -g @catppuccin_flavour 'frappe' 
+          '';
+        }
+      ];
     };
   };
 }
