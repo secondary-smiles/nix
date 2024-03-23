@@ -86,6 +86,8 @@
       enable = true;
 
       settings = {
+        import = ["~/nix/dots/alacritty/dracula.toml"];
+
         env.TERM = "xterm-256color";
         font = {
           normal.family = "JetbrainsMono Nerd Font Mono";
@@ -104,6 +106,7 @@
       enable = true;
       escapeTime = 0;
       mouse = true;
+      clock24 = true;
       terminal = "screen-256color";
       extraConfig = ''
         unbind C-b
@@ -115,14 +118,24 @@
         bind l select-pane -R
 
         unbind "'"
-        bind "'" split-window -h
+        bind "'" split-window -h -c "#{pane_current_path}"
+        bind '"' split-window -v -c "#{pane_current_path}"
         unbind %
+
+        bind n previous-window
+        bind m next-window
+        unbind p
       '';
       plugins = with pkgs; [
         {
-          plugin = tmuxPlugins.catppuccin;
+          plugin = tmuxPlugins.dracula;
           extraConfig = ''
-            set -g @catppuccin_flavour 'frappe' 
+            set -g @dracula-show-powerline false
+            set -g @dracula-plugins "git battery weather time"
+            set -g @dracula-show-left-icon "●"
+
+            set -g @dracula-show-location false
+            set -g @dracula-military-time true
           '';
         }
       ];

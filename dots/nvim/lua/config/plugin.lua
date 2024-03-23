@@ -22,10 +22,10 @@ return require('packer').startup(function(use)
   --})
 
   use({
-	'secondary-smiles/skull-vim',
-	config = function()
-    vim.cmd('colorscheme skull')
-	end
+    'secondary-smiles/skull-vim',
+    config = function()
+      vim.cmd('colorscheme skull')
+    end
   })
 
   use {
