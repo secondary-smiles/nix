@@ -19,6 +19,7 @@
       "alacritty"
       "swift-quit"
       "httpie"
+      "qbittorrent"
     ];
   };
   
@@ -107,7 +108,7 @@
       escapeTime = 0;
       mouse = true;
       clock24 = true;
-      terminal = "screen-256color";
+      terminal = "tmux-256color";
       extraConfig = ''
         unbind C-b
         set -g prefix C-s
