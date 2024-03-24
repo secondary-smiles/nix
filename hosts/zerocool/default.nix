@@ -20,6 +20,7 @@
       "swift-quit"
       "httpie"
       "qbittorrent"
+      "appcleaner"
     ];
   };
   
@@ -122,10 +123,6 @@
         bind "'" split-window -h -c "#{pane_current_path}"
         bind '"' split-window -v -c "#{pane_current_path}"
         unbind %
-
-        bind n previous-window
-        bind m next-window
-        unbind p
       '';
       plugins = with pkgs; [
         {
