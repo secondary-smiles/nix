@@ -14,13 +14,14 @@
     brews = [
     ];
     casks = [
-      "arc"
-      "tailscale"
       "alacritty"
-      "swift-quit"
-      "httpie"
-      "qbittorrent"
       "appcleaner"
+      "arc"
+      "httpie"
+      "iina"
+      "qbittorrent"
+      "swift-quit"
+      "tailscale"
     ];
   };
   
